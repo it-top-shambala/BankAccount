@@ -50,7 +50,7 @@ public class AccountInput
             case 1:
                 ControlMenu();
                 break;
-            case 3:
+            case 2:
                 ExitMenu();
                 break;
             
