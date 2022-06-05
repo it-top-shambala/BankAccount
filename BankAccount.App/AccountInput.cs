@@ -7,7 +7,20 @@ public class AccountInput
     private Account account;
     public void Start()
     {
+        Account.Info = CLI.ShowInfo;
+        Account.Info += WriteToFile;
+        Account.Error = CLI.ShowError;
+        Account.Error += WriteToFile;
+        Account.Success = CLI.ShowSuccess;
+        Account.Success += WriteToFile;
+        
         RunMainMenu();
+    }
+
+    private void WriteToFile(string message)
+    {
+        using StreamWriter writer = new StreamWriter("file.txt", true);
+        writer.WriteLine(message);
     }
 
     private void RunMainMenu()

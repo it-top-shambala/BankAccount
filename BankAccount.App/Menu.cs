@@ -32,7 +32,6 @@ public class Menu
                 ResetColor();
             }
             WriteLine($"{prefix} << {currentOption} >>");
-            ResetColor();
         }
         ResetColor();
     }
