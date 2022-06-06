@@ -5,8 +5,11 @@
         private static void Main()
         {
             Account.Error = CLI.ShowError;
+            Account.Error += File.ShowInfo;
             Account.Info = CLI.ShowInfo;
+            Account.Info += File.ShowInfo;
             Account.Success = CLI.ShowSuccess;
+            Account.Success += File.ShowSuccess;
             
             Console.Write("Хотите открыть счёт? (Y/Д - да): ");
             var choise = Console.ReadLine();
