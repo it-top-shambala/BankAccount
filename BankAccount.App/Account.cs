@@ -1,5 +1,6 @@
 ﻿namespace BankAccount.App;
 
+
 public class Account
 {
     private double _balance;
@@ -37,6 +38,7 @@ public class Account
         { 
             _balance += sum;
             Success?.Invoke($"Добавлено {sum} денег");
+            CLI.LogToFileAdd(sum);
         }
         
     }
@@ -51,6 +53,8 @@ public class Account
         {
             _balance -= sum;
             Success?.Invoke($"Снято {sum} денег");
+            CLI.LogToFileSub(sum);
         }
     }
+
 }
