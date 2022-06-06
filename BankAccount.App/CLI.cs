@@ -1,4 +1,10 @@
-﻿namespace BankAccount.App;
+﻿using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+namespace BankAccount.App;
 
 public static class CLI
 {
@@ -12,4 +18,5 @@ public static class CLI
     public static void ShowInfo(string message) => Show(message, ConsoleColor.Blue);
     public static void ShowError(string message) => Show(message, ConsoleColor.Red);
     public static void ShowSuccess(string message) => Show(message, ConsoleColor.Green);
+    
 }
