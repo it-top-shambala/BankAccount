@@ -21,7 +21,10 @@
             int.TryParse(Console.ReadLine(), out var initBalance);
             var account = new Account(initBalance);
             Console.WriteLine(account.Balance);
-            
+
+            account.Add(2000);
+            Console.WriteLine(account.Balance);
+
             //TODO Дома дописать программу на реализацию внесения и снятия денег со счёта.
             //TODO Добавить запись в файл и прявязать её к делегатам Info, Error, Success
         }
