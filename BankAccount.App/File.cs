@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿
 
 namespace BankAccount.App
 {
@@ -11,10 +7,10 @@ namespace BankAccount.App
         private readonly string _fileName;
         private StreamWriter _streamWriter;
 
-        public static void ShowInfo(string message)
-        {
-            CLI.ShowInfo(message);
-        }
+        //public static void ShowInfo(string message)
+        //{
+        //    CLI.ShowInfo(message);
+        //}
 
         public static void ShowError(string message)
         {
@@ -24,6 +20,18 @@ namespace BankAccount.App
         public static void ShowSuccess(string massage)
         {
             CLI.ShowSuccess(massage);
+        }
+
+        public File(string fileName)
+        {
+            _fileName = fileName;
+            _streamWriter = new StreamWriter(new FileStream(_fileName, FileMode.Create));
+        }
+
+        public async void AddingToFile( string message)
+        {
+           _streamWriter.Write(message);
+            _streamWriter.Close();
         }
     }
 }

@@ -4,12 +4,10 @@
     {
         private static void Main()
         {
+            File file = new File("Account.log") ;
             Account.Error = CLI.ShowError;
-            Account.Error += File.ShowInfo;
             Account.Info = CLI.ShowInfo;
-            Account.Info += File.ShowInfo;
             Account.Success = CLI.ShowSuccess;
-            Account.Success += File.ShowSuccess;
             
             Console.Write("Хотите открыть счёт? (Y/Д - да): ");
             var choise = Console.ReadLine();
@@ -69,7 +67,9 @@
 
             }
 
+            file.AddingToFile($"Баланс {account.Balance}");
             CLI.ShowInfo(message: $"Баланс: {account.Balance}");
+
 
             //TODO Дома дописать программу на реализацию внесения и снятия денег со счёта.
             //TODO Добавить запись в файл и прявязать её к делегатам Info, Error, Success
