@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>BankAccount.App</name>
+    </assembly>
+    <members>
+        <member name="T:BankAccount.App.Account">
+            <summary>
+            Класс описывающий аккаут в банке
+            </summary>
+        </member>
+        <member name="F:BankAccount.App.Account._balance">
+            <summary>
+            Баланс счета
+            </summary>
+        </member>
+        <member name="P:BankAccount.App.Account.Balance">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:BankAccount.App.CLI">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:BankAccount.App.File">
+            <summary>
+            Static class for writing to a file
+            Cтатический класс для записи в файл 
+            </summary>
+        </member>
+        <member name="M:BankAccount.App.File.RecToFile(System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="message">Recorded message (Записываемое сообщение)</param>
+            <param name="filePath">Имя файла</param>
+        </member>
+        <member name="M:BankAccount.App.File.RecToFileSuccess(System.String)">
+            <summary>
+            Recording messages on banking transactions
+            Запись сообщений по банковским операциям
+            </summary>
+            <param name="message">Recorded message (Записываемое сообщение)</param>
+        </member>
+    </members>
+</doc>

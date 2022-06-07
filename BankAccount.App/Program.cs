@@ -1,7 +1,4 @@
-﻿
-
-
-namespace BankAccount.App
+﻿namespace BankAccount.App
 {
     internal static class Program
     {
@@ -10,7 +7,7 @@ namespace BankAccount.App
             Account.Error = CLI.ShowError;
             Account.Info = CLI.ShowInfo;
             Account.Success = CLI.ShowSuccess;
-
+            Account.SuccessFile = File.RecToFileSuccess;
             Console.Write("Хотите открыть счёт? (Y/Д - да): ");
             var choise = Console.ReadLine();
 
@@ -38,32 +35,21 @@ namespace BankAccount.App
                 int.TryParse(Console.ReadLine(), out key);
                 switch (key)
                 {
-                    case 1:
-                        Account.Success = File.ShowFile;
+                    case 1:                       
                         Console.Write("Введите сумму денег: ");
                         str = Console.ReadLine();
                         account.Add(double.Parse(str));
-                       
                         break;
                     case 2:
-                        Account.Success = File.ShowFile;
                         Console.WriteLine(("Введите сумму денег: "));
                         str = Console.ReadLine();
                         account.Sub(double.Parse(str));
-
                         break;
                     case 3:
-                       
-                        Account.Success = File.ShowFile;
+                        Account.Success = File.RecToFileSuccess;
                         Console.WriteLine(account.Balance);
-                        
                         break;
-                   
-                       
-                       
                 }
-
-
             } while (key != 0);
 
             //TODO Дома дописать программу на реализацию внесения и снятия денег со счёта.

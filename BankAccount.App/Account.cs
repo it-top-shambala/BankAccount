@@ -1,8 +1,16 @@
 ﻿namespace BankAccount.App;
-
+/// <summary>
+/// Класс описывающий аккаут в банке
+/// </summary>
 public class Account
 {
+    /// <summary>
+    /// Баланс счета
+    /// </summary>
     private double _balance;
+    /// <summary>
+    /// 
+    /// </summary>
     public double Balance
     {
         get
@@ -16,6 +24,10 @@ public class Account
     public static Action<string> Error;
     public static Action<string> Success;
 
+    public static Action<string> InfoFile;
+    public static Action<string> ErrorFile;
+    public static Action<string> SuccessFile;
+
     public Account()
     {
         _balance = 0;
@@ -25,6 +37,7 @@ public class Account
     {
         _balance = balance;
         Success?.Invoke("Счёт успешно открыт!");
+        SuccessFile?.Invoke("Счёт успешно открыт!");
     }
 
     public void Add(double sum)
@@ -32,11 +45,13 @@ public class Account
         if (sum < 0)
         {
             Error?.Invoke("Попытка добавить отрицательную сумму");
+            ErrorFile?.Invoke("Попытка добавить отрицательную сумму");
         }
         else
         { 
             _balance += sum;
             Success?.Invoke($"Добавлено {sum} денег");
+            SuccessFile?.Invoke($"Добавлено {sum} денег");
         }
         
     }
@@ -46,11 +61,13 @@ public class Account
         if (sum > _balance)
         {
             Error?.Invoke("Попытка снять больше денег, чем у вас есть");
+            ErrorFile?.Invoke("Попытка снять больше денег, чем у вас есть");
         }
         else
         {
             _balance -= sum;
             Success?.Invoke($"Снято {sum} денег");
+            SuccessFile?.Invoke($"Снято {sum} денег");
         }
     }
 }

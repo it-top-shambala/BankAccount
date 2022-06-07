@@ -5,7 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 namespace BankAccount.App;
-
+/// <summary>
+/// 
+/// </summary>
 public static class CLI
 {
     private static void Show(string message, ConsoleColor color)
