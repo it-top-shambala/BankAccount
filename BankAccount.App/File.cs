@@ -13,10 +13,11 @@ namespace BankAccount.App
     internal static class File
     {
         /// <summary>
-        /// 
+        /// Method of writing to the message file
+        /// Метод записи в файл сообщения
         /// </summary>
         /// <param name="message">Recorded message (Записываемое сообщение)</param>
-        /// <param name="filePath">Имя файла</param>
+        /// <param name="filePath">File name(Имя файла)</param>
         public static void RecToFile(string message, string filePath)
         {
             using (StreamWriter sw = new StreamWriter(filePath, true, Encoding.Unicode))
@@ -25,7 +26,9 @@ namespace BankAccount.App
             }
         }
         /// <summary>
+        /// Method for the delegate
         /// Recording messages on banking transactions
+        /// Mетод для делегата
         /// Запись сообщений по банковским операциям
         /// </summary>
         /// <param name="message">Recorded message (Записываемое сообщение)</param>

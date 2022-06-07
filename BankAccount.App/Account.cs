@@ -4,9 +4,7 @@
 /// </summary>
 public class Account
 {
-    /// <summary>
-    /// Баланс счета
-    /// </summary>
+    
     private double _balance;
     /// <summary>
     /// 
@@ -19,7 +17,7 @@ public class Account
             return _balance;
         }
     }
-
+    
     public static Action<string> Info;
     public static Action<string> Error;
     public static Action<string> Success;
