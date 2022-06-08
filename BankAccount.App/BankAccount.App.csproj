@@ -5,6 +5,7 @@
         <TargetFramework>net6.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
+		<DocumentationFile>doc/doc_BankAccount.xml</DocumentationFile>
     </PropertyGroup>
 
 </Project>

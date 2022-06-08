@@ -1,0 +1,83 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>BankAccount.App</name>
+    </assembly>
+    <members>
+        <member name="T:BankAccount.App.Account">
+            <summary>
+            Сlass describing a bank account
+            Класс описывающий аккаут в банке
+            </summary>
+        </member>
+        <member name="P:BankAccount.App.Account.Balance">
+            <summary>
+            Variable balance
+            Переменная баланс
+            </summary>
+        </member>
+        <member name="P:BankAccount.App.Account.PaymentAccount">
+            <summary>
+            Payment account
+            Расчетный счет
+            </summary>
+        </member>
+        <member name="M:BankAccount.App.Account.#ctor">
+            <summary>
+            Тhe constructor that creates the default account
+            Конструктор создающий аккаунт по умолчанию 
+            </summary>
+        </member>
+        <member name="M:BankAccount.App.Account.#ctor(System.Double,System.String)">
+            <summary>
+            Constructor with one parameter that creates an account
+            Конструктор с одним параметром создающий аккаунт
+            </summary>
+            <param name="balance">Balanse (Баланс)</param>
+            <param name="playmentAccount">Payment account (Расчетный счет)</param>
+        </member>
+        <member name="T:BankAccount.App.CLI">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:BankAccount.App.File">
+            <summary>
+            Static class for writing to a file
+            Cтатический класс для записи в файл 
+            </summary>
+        </member>
+        <member name="M:BankAccount.App.File.RecToFile(System.String,System.String)">
+            <summary>
+            Method of writing to the message file
+            Метод записи в файл сообщения
+            </summary>
+            <param name="message">Recorded message (Записываемое сообщение)</param>
+            <param name="filePath">File name(Имя файла)</param>
+        </member>
+        <member name="M:BankAccount.App.File.RecToFileSuccess(System.String,System.String)">
+            <summary>
+            Method for the delegate
+            Recording messages on banking transactions
+            Mетод для делегата
+            Запись сообщений по банковским операциям
+            </summary>
+            <param name="message">Recorded message (Записываемое сообщение)</param>
+            <param name="filePath">File name(Имя файла)</param>
+        </member>
+        <member name="M:BankAccount.App.File.RecToFileError(System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="message"></param>
+            <param name="filePath"></param>
+        </member>
+        <member name="M:BankAccount.App.File.RecToFileInfo(System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="message"></param>
+            <param name="filePath"></param>
+        </member>
+    </members>
+</doc>
