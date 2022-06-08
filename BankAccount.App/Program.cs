@@ -8,6 +8,8 @@
             Account.Info = CLI.ShowInfo;
             Account.Success = CLI.ShowSuccess;
             Account.SuccessFile = File.RecToFileSuccess;
+            Account.ErrorFile = File.RecToFileError;
+            Account.InfoFile = File.RecToFileInfo;
             Console.Write("Хотите открыть счёт? (Y/Д - да): ");
             var choise = Console.ReadLine();
 
@@ -16,10 +18,11 @@
                 CLI.ShowInfo("До свидания ...");
                 return;
             }
-
+            Console.WriteLine("Введите номер счета : ");
+            string payment = Console.ReadLine();
             Console.Write("Сколько денег хотите положить при открытии счёта? - ");
             int.TryParse(Console.ReadLine(), out var initBalance);
-            var account = new Account(initBalance);
+            var account = new Account(initBalance, payment);
             Console.WriteLine(account.Balance);
 
             int key;
@@ -46,7 +49,7 @@
                         account.Sub(double.Parse(str));
                         break;
                     case 3:
-                        Account.Success = File.RecToFileSuccess;
+                        
                         Console.WriteLine(account.Balance);
                         break;
                 }

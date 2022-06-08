@@ -32,8 +32,20 @@ namespace BankAccount.App
         /// Запись сообщений по банковским операциям
         /// </summary>
         /// <param name="message">Recorded message (Записываемое сообщение)</param>
-        public static void RecToFileSuccess(string message) => RecToFile(message, "Success.txt");
-        public static void RecToFileError(string message) => RecToFile(message, "Error.txt");
+        /// <param name="filePath">File name(Имя файла)</param>
+        public static void RecToFileSuccess(string message, string filePath) => RecToFile(message, filePath);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="message"></param>
+        /// <param name="filePath"></param>
+        public static void RecToFileError(string message, string filePath) => RecToFile(message, filePath);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="message"></param>
+        /// <param name="filePath"></param>
+        public static void RecToFileInfo(string message, string filePath) => RecToFile(message, filePath);
 
     }
 }
