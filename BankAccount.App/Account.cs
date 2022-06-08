@@ -1,5 +1,6 @@
 ﻿namespace BankAccount.App;
 /// <summary>
+/// Сlass describing a bank account
 /// Класс описывающий аккаут в банке
 /// </summary>
 public class Account
@@ -7,13 +8,14 @@ public class Account
     
     private double _balance;
     /// <summary>
-    /// 
+    /// Variable balance
+    /// Переменная баланс
     /// </summary>
     public double Balance
     {
         get
         {
-            Info?.Invoke("Запрошена сумма остатка счёта");
+            Info?.Invoke($"{DateTime.Now} Запрошена сумма остатка счёта");
             return _balance;
         }
     }
@@ -26,15 +28,24 @@ public class Account
     public static Action<string> ErrorFile;
     public static Action<string> SuccessFile;
 
+    /// <summary>
+    /// Тhe constructor that creates the default account
+    /// Конструктор создающий аккаунт по умолчанию 
+    /// </summary>
     public Account()
     {
         _balance = 0;
-        Success?.Invoke("Счёт успешно открыт!");
+        Success?.Invoke($"{DateTime.Now} Счёт успешно открыт!"); ;
     }
+    /// <summary>
+    /// Constructor with one parameter that creates an account
+    /// Конструктор с одним параметром создающий аккаунт
+    /// </summary>
+    /// <param name="balance">Balanse(Баланс)</param>
     public Account(double balance)
     {
         _balance = balance;
-        Success?.Invoke("Счёт успешно открыт!");
+        Success?.Invoke($"{DateTime.Now} Счёт успешно открыт!");
         SuccessFile?.Invoke("Счёт успешно открыт!");
     }
 
@@ -48,8 +59,8 @@ public class Account
         else
         { 
             _balance += sum;
-            Success?.Invoke($"Добавлено {sum} денег");
-            SuccessFile?.Invoke($"Добавлено {sum} денег");
+            Success?.Invoke($"{DateTime.Now} Добавлено {sum} денег");
+            SuccessFile?.Invoke($"{DateTime.Now} Добавлено {sum} денег");
         }
         
     }
@@ -64,8 +75,8 @@ public class Account
         else
         {
             _balance -= sum;
-            Success?.Invoke($"Снято {sum} денег");
-            SuccessFile?.Invoke($"Снято {sum} денег");
+            Success?.Invoke($"{DateTime.Now} Снято {sum} денег");
+            SuccessFile?.Invoke($"{DateTime.Now} Снято {sum} денег");
         }
     }
 }

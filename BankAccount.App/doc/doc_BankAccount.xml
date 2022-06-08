@@ -9,15 +9,23 @@
             Класс описывающий аккаут в банке
             </summary>
         </member>
-        <member name="F:BankAccount.App.Account._balance">
+        <member name="P:BankAccount.App.Account.Balance">
             <summary>
-            Баланс счета
+            Variable balance
+            Переменная баланс
             </summary>
         </member>
-        <member name="P:BankAccount.App.Account.Balance">
+        <member name="M:BankAccount.App.Account.#ctor">
+            <summary>
+            Тhe constructor that creates the default account
+            Конструктор создающий аккаунт по умолчанию 
+            </summary>
+        </member>
+        <member name="M:BankAccount.App.Account.#ctor(System.Double)">
             <summary>
             
             </summary>
+            <param name="balance"></param>
         </member>
         <member name="T:BankAccount.App.CLI">
             <summary>

@@ -33,5 +33,7 @@ namespace BankAccount.App
         /// </summary>
         /// <param name="message">Recorded message (Записываемое сообщение)</param>
         public static void RecToFileSuccess(string message) => RecToFile(message, "Success.txt");
+        public static void RecToFileError(string message) => RecToFile(message, "Error.txt");
+
     }
 }
