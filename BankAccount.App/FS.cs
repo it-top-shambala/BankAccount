@@ -10,7 +10,7 @@ public class FS : IDisposable
     public FS(string fileName)
     {
         _fileName = fileName;
-        _streamWriter = new StreamWriter(new FileStream(_fileName,FileMode.Create));
+        _streamWriter = new StreamWriter(_fileName, append: false);
     }
     
     public void Show(string message)
