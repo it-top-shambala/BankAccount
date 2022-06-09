@@ -1,16 +1,17 @@
-﻿namespace BankAccount.App
+﻿using System.Diagnostics;
+
+namespace BankAccount.App
 {
     internal static class Program
     {
         private static void Main()
         {
-            using FS fs = new FS("newLog.log");
             Account.Error = CLI.ShowError;
-            Account.Error += fs.ShowError;
+            Account.Error += FS.Show;
             Account.Info = CLI.ShowInfo;
-            Account.Info += fs.ShowInfo;
+            Account.Info += FS.Show;
             Account.Success = CLI.ShowSuccess;
-            Account.Success += fs.ShowSuccess;
+            Account.Success += FS.Show;
             Console.Write("Do you want to open account? (Y/N - да): ");
             var choise = Console.ReadLine();
             if (choise != "Y" && choise != "y" && choise != "N" && choise != "n")
@@ -52,7 +53,7 @@
                 }
                 CLI.ShowInfo(message:$"Your balance: {account.Balance}");
             }
-            
+            Process.Start("notepad.exe", "test.log");
             //TODO Дома дописать программу на реализацию внесения и снятия денег со счёта.
             //TODO Добавить запись в файл и прявязать её к делегатам Info, Error, Success
         }
