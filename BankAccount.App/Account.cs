@@ -15,9 +15,9 @@ public class Account
         }
     }
    
-    public static Action<string> Info;
-    public static Action<string> Error;
-    public static Action<string> Success;
+    public static Action<string> ?Info;
+    public static Action<string> ?Error;
+    public static Action<string> ?Success;
     
 
     public Account()
