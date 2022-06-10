@@ -1,4 +1,9 @@
-﻿namespace BankAccount.App
+﻿         
+         //TODO Дома дописать программу на реализацию внесения и снятия денег со счёта.
+         //TODO Добавить запись в файл и прявязать её к делегатам Info, Error, Success
+        
+
+namespace BankAccount.App
 {
     internal static class Program
     {
@@ -26,8 +31,8 @@
             var account = new Account(initBalance);
             Console.WriteLine(account.Balance);
 
-            bool isRunning = true;
-            while (isRunning)
+            bool bankClient = true;
+            while (bankClient)
             {
                 Console.WriteLine("Если хотите снять деньги со счета, введите 1.");
                 Console.WriteLine("Если хотите положить деньги на счет, введите 2.");
@@ -52,8 +57,8 @@
                         Console.WriteLine($"Ваш баланс: {account.Balance}");
                         break;
                     case 0:
-                        Console.WriteLine("Сессия завершена");
-                        isRunning = false;
+                        Console.WriteLine("Операция завершена");
+                        bankClient = false;
                         break;
                     default:
                         Console.WriteLine("Неправильный ввод! Повторите попытку.");
@@ -61,13 +66,7 @@
                 }
 
             }
-
-
-            //TODO Дома дописать программу на реализацию внесения и снятия денег со счёта.
-            //TODO Добавить запись в файл и прявязать её к делегатам Info, Error, Success
-
         }
-
         static void LogToFile(string message)
         {
             using StreamWriter file = new StreamWriter(path: "account.log", append: true);
